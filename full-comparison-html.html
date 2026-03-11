@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ooma B2B Referral System — Full Portal Comparison</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#f8f9fb;color:#1a1a2e;line-height:1.7}
+.header{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;padding:60px 40px 50px}
+.header-inner{max-width:960px;margin:0 auto}
+.header h1{font-size:32px;font-weight:700;margin-bottom:8px;letter-spacing:-.5px}
+.header .subtitle{font-size:18px;font-weight:300;opacity:.85;margin-bottom:24px}
+.meta-row{display:flex;gap:32px;font-size:14px;opacity:.7;flex-wrap:wrap}
+.container{max-width:960px;margin:0 auto;padding:40px 40px 80px}
+.toc{background:#fff;border-radius:12px;padding:32px 40px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.toc h2{font-size:18px;font-weight:700;margin-bottom:16px}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 32px}
+.toc a{font-size:14px;color:#0f3460;text-decoration:none;padding:4px 0;display:block}
+.toc a:hover{text-decoration:underline}
+.section{background:#fff;border-radius:12px;padding:36px 40px;margin-bottom:24px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.section-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:#0f3460;margin-bottom:8px}
+.section h2{font-size:22px;font-weight:700;margin-bottom:16px;color:#1a1a2e}
+.section h3{font-size:17px;font-weight:600;margin:20px 0 10px;color:#1a1a2e}
+.section h4{font-size:15px;font-weight:600;margin:16px 0 8px;color:#333}
+.section p{font-size:15px;color:#3a3a4a;margin-bottom:14px}
+.highlight-box{background:#f0f4ff;border-left:4px solid #0f3460;padding:20px 24px;border-radius:0 8px 8px 0;margin:20px 0}
+.highlight-box p{margin:0;font-size:15px;color:#1a1a2e}
+.highlight-box strong{color:#0f3460}
+.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.portal-card{padding:24px;border-radius:10px;border:1px solid #e8eaf0}
+.portal-card.a{background:#fffbf5;border-color:#f0d9b5}
+.portal-card.b{background:#f5f8ff;border-color:#b5cdf0}
+.portal-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+.portal-card .tagline{font-size:13px;font-weight:500;color:#666;margin-bottom:10px}
+.portal-card p{font-size:14px;color:#4a4a5a;margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13.5px}
+th{text-align:left;padding:10px 14px;background:#f4f6f9;font-weight:600;color:#1a1a2e;border-bottom:2px solid #dde1e8}
+td{padding:9px 14px;border-bottom:1px solid #eef0f4;color:#3a3a4a;vertical-align:top}
+tr:last-child td{border-bottom:none}
+.strength{color:#16a34a}
+.weakness{color:#dc2626}
+.sw-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:20px 0}
+.sw-card{padding:24px;border-radius:10px;border:1px solid #e8eaf0}
+.sw-card.s{background:#f0fdf4;border-color:#86efac}
+.sw-card.w{background:#fef2f2;border-color:#fca5a5}
+.sw-card h4{font-size:14px;font-weight:600;margin-bottom:10px}
+.sw-card ul{font-size:14px;color:#3a3a4a;padding-left:20px}
+.sw-card li{margin-bottom:6px}
+.stars{color:#f59e0b;letter-spacing:2px;font-size:14px}
+.stars-dim{color:#d4d8e0;letter-spacing:2px;font-size:14px}
+.rec-box{background:linear-gradient(135deg,#0f3460 0%,#1a1a5e 100%);color:#fff;border-radius:12px;padding:36px 40px;margin-bottom:24px}
+.rec-box h2{color:#fff;font-size:22px;margin-bottom:16px}
+.rec-box p{color:rgba(255,255,255,.88);font-size:15px;margin-bottom:14px}
+.tier-badge{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.tier-1{background:#0f3460;color:#fff}
+.tier-2{background:#f59e0b;color:#fff}
+.tier-3{background:#9ca3af;color:#fff}
+.print-btn{position:fixed;bottom:24px;right:24px;background:#0f3460;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:100;display:flex;align-items:center;gap:8px}
+.print-btn:hover{background:#1a4a7e}
+@media print{.print-btn{display:none}.toc{display:none}body{background:#fff}.section,.rec-box{box-shadow:none;break-inside:avoid}.header{padding:30px 20px 25px}}
+@media(max-width:700px){.portal-grid,.sw-grid,.toc-grid{grid-template-columns:1fr}.header{padding:40px 20px 30px}.container{padding:20px 16px 60px}.section{padding:24px 20px}.rec-box{padding:24px 20px}.header h1{font-size:24px}table{font-size:12px}th,td{padding:7px 8px}}
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">
+<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+Print / Save PDF
+</button>
+
+<div class="header">
+<div class="header-inner">
+<h1>Ooma B2B Referral System</h1>
+<div class="subtitle">Full Feature Comparison — Portal A vs Portal B</div>
+<div class="meta-row">
+<span>Prepared: March 12, 2026</span>
+<span>Classification: Internal</span>
+<span>Scope: Referrer, Closer, Analytics, Admin</span>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+<h2>Table of Contents</h2>
+<div class="toc-grid">
+<a href="#s1">1. Executive Summary</a>
+<a href="#s8">8. Side-by-Side Comparison Table</a>
+<a href="#s2">2. Architecture & Access</a>
+<a href="#s9">9. Strengths & Weaknesses</a>
+<a href="#s3">3. Referrer / Setter Experience</a>
+<a href="#s10">10. UX Scoring</a>
+<a href="#s4">4. Closer Experience</a>
+<a href="#s11">11. Technical Stack Comparison</a>
+<a href="#s5">5. Analytics & Reporting</a>
+<a href="#s12">12. Implementation Effort Estimates</a>
+<a href="#s6">6. Personalization & Settings</a>
+<a href="#s13">13. Recommended Unified Feature List</a>
+<a href="#s7">7. Administration</a>
+<a href="#s14">14. Final Recommendation</a>
+</div>
+</div>
+
+<!-- Section 1 -->
+<div class="section" id="s1">
+<div class="section-label">Section 1</div>
+<h2>Executive Summary</h2>
+<p>Two teams independently built solutions to manage the AT&T → Ooma B2B referral pipeline, where field agents (Referrers/Setters) generate warm leads for phone-based closers.</p>
+<div class="portal-grid">
+<div class="portal-card a">
+<h4>Portal A — "It's Money Time"</h4>
+<div class="tagline">Hybrid: Google Form + Sheet + Closer CRM</div>
+<p>A Google Form for lead submission feeding a Google Sheet, paired with a dedicated, feature-rich Closer CRM with PIN-based login, gamification, and deep sales analytics.</p>
+</div>
+<div class="portal-card b">
+<h4>Portal B — "Referrals"</h4>
+<div class="tagline">Unified role-based platform</div>
+<p>A single web application where both Setters and Closers log in with role-based views, built-in multi-channel communication, SLA tracking, and full audit trails.</p>
+</div>
+</div>
+</div>
+
+<!-- Section 2 -->
+<div class="section" id="s2">
+<div class="section-label">Section 2</div>
+<h2>Architecture & Access</h2>
+<table>
+<thead><tr><th>Dimension</th><th>Portal A</th><th>Portal B</th></tr></thead>
+<tbody>
+<tr><td>Referrer Tool</td><td>Google Form (external, no auth)</td><td>In-app form (integrated)</td></tr>
+<tr><td>Data Storage</td><td>Google Sheet (manual)</td><td>Application database (API-driven)</td></tr>
+<tr><td>Closer CRM</td><td>Standalone app (tyler-crm-and-payroll.onrender.com)</td><td>Same unified app (referrals-tau.vercel.app)</td></tr>
+<tr><td>Authentication</td><td>Profile selector + 4-digit PIN</td><td>Email/password + forgot password</td></tr>
+<tr><td>Hosting</td><td>Render</td><td>Vercel</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 3 -->
+<div class="section" id="s3">
+<div class="section-label">Section 3</div>
+<h2>Referrer / Setter Experience</h2>
+
+<h3>3.1 Lead Submission</h3>
+<h4>Portal A — Google Form ("OOMA Order Form")</h4>
+<p>The referrer submits leads through a standalone Google Form with 20+ fields. The form is thorough, with inline pricing, dropdown selectors for phone quantities (0–20), and a full 10-point customer expectation script that the rep must confirm they read aloud. Office/dealer code selection covers 35+ offices. Compliance is enforced through three mandatory checkboxes.</p>
+
+<h4>Portal B — In-App Form ("Submit New Referral")</h4>
+<p>The referrer submits leads through an integrated form within the same platform. Fields are similar but streamlined — the rep is already identified by login, and the address field includes geocoding. Compliance checkboxes are condensed into three items with summarized expectations. Product configuration uses free-text input rather than constrained dropdowns.</p>
+
+<h3>3.2 Referrer Visibility & Dashboard</h3>
+<div class="portal-grid">
+<div class="portal-card a">
+<h4>Portal A — None</h4>
+<p>Once a referrer submits the Google Form, they have zero visibility into what happens next. No dashboard, no status tracking, no feedback loop. The only way to check is to ask the closer team directly.</p>
+</div>
+<div class="portal-card b">
+<h4>Portal B — Full Dashboard with SLA Alerts</h4>
+<p>Comprehensive dashboard showing: total referrals, active/closed/unclaimed/stale counts, claim rate (66.7%), avg time to claim (11.7h), SLA alerts for unclaimed >24h and untouched >48h leads, full pipeline view, and complete audit trail.</p>
+</div>
+</div>
+</div>
+
+<!-- Section 4 -->
+<div class="section" id="s4">
+<div class="section-label">Section 4</div>
+<h2>Closer Experience</h2>
+
+<h3>4.1 Dashboard & Lead Management</h3>
+<h4>Portal A — "It's Money Time" CRM</h4>
+<p>Dashboard organized into four sections: Upcoming Appointments (scheduled calls), Fresh Leads (unclaimed with "Up For Grabs" button), Reloop (464 leads needing re-contact, sortable), and Priority (flagged leads). Right sidebar shows real-time KPI counters. Search covers company, name, phone, rep, and email.</p>
+
+<h4>Portal B — Unified Work Console</h4>
+<p>Two views: "Command" (action-priority queue with Suggested Next, Fresh & Unclaimed, Mine – In Progress, Unclaimed – In Progress, Closed) and "Status" (pipeline stages). The "Suggested Next" feature provides intelligent lead prioritization. Dashboard includes Closer Execution metrics (claim rate, time to first touch, touches/referral avg).</p>
+
+<h3>4.2 Lead Detail View</h3>
+<table>
+<thead><tr><th>Feature</th><th>Portal A</th><th>Portal B</th></tr></thead>
+<tbody>
+<tr><td>Status Pipeline</td><td>Visual bar (Fresh → Sale Complete)</td><td>Visual bar (New → Sale Complete)</td></tr>
+<tr><td>Auto Cost Calculator</td><td>✅ With expandable breakdown</td><td>❌</td></tr>
+<tr><td>Customer Timezone</td><td>✅ Live local time display</td><td>❌</td></tr>
+<tr><td>Copy-to-Clipboard</td><td>✅ All fields</td><td>✅ All fields</td></tr>
+<tr><td>Edit Referral Details</td><td>Via Edit button</td><td>✅ Edit button</td></tr>
+<tr><td>Audit Trail</td><td>❌</td><td>✅ Full history with timestamps</td></tr>
+<tr><td>Setter/Rep Info</td><td>✅ AT&T rep details</td><td>✅ Setter info with ICL</td></tr>
+</tbody>
+</table>
+
+<h3>4.3 Call / Contact Logging</h3>
+<table>
+<thead><tr><th>Feature</th><th>Portal A</th><th>Portal B</th></tr></thead>
+<tbody>
+<tr><td>Call Initiation</td><td>Manual (copy number, dial)</td><td>Click-to-call (native device)</td></tr>
+<tr><td>Contact Methods</td><td>Called & Texted / Called / Texted</td><td>Call / Email / SMS / Note</td></tr>
+<tr><td>Dispositions</td><td>Good/Bad + 5 quick tags</td><td>Free-text note</td></tr>
+<tr><td>Pre-built Tags</td><td>✅ (No response, Busy, Spanish, etc.)</td><td>❌</td></tr>
+<tr><td>Private Notes</td><td>❌</td><td>✅ Private checkbox</td></tr>
+<tr><td>In-App Email</td><td>❌</td><td>✅ Full composer + merge fields</td></tr>
+<tr><td>In-App SMS</td><td>❌</td><td>✅ Composer + templates</td></tr>
+<tr><td>Merge Field Preview</td><td>❌</td><td>✅ Live preview toggle</td></tr>
+</tbody>
+</table>
+
+<h3>4.4 Communication Templates</h3>
+<table>
+<thead><tr><th>Feature</th><th>Portal A</th><th>Portal B</th></tr></thead>
+<tbody>
+<tr><td>Template Count</td><td>5 pre-built (hardcoded)</td><td>Unlimited, user-created</td></tr>
+<tr><td>Channels</td><td>Text/SMS only</td><td>Email + SMS</td></tr>
+<tr><td>Merge Fields</td><td>Inline tokens (CXNAME, REPNAME)</td><td>{{variable}} with insert dropdown</td></tr>
+<tr><td>Scope</td><td>Per-rep in settings</td><td>Personal / shared (relationship-based)</td></tr>
+<tr><td>Out-of-Box Readiness</td><td>✅ Ready immediately</td><td>❌ Requires setup</td></tr>
+<tr><td>Subject Line</td><td>N/A (text only)</td><td>✅ For email channel</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 5 -->
+<div class="section" id="s5">
+<div class="section-label">Section 5</div>
+<h2>Analytics & Reporting</h2>
+<div class="portal-grid">
+<div class="portal-card a">
+<h4>Portal A — Dedicated Analytics Page</h4>
+<p>Full "Extensions & Touch Analytics" page with: date range presets, Quick Look metrics (Total Extensions, Avg Per Sale, Sales Count), four performance cards (Response Speed, Touches Per Sale, Volume, Lead to Sale Complete), Rep Time Sheet, Rep Leaderboard, Top Extensions, and All Filtered Sales. Settings includes weekly Extension Goals with daily/monthly/yearly projections.</p>
+</div>
+<div class="portal-card b">
+<h4>Portal B — Role-Based Dashboard Metrics</h4>
+<p>Analytics embedded in dashboards: Setters see "Setter Health" (sourced total, claim rate, avg time to claim, unclaimed >24h, untouched >48h) with SLA Alerts. Closers see "Closer Execution" (received total, claim rate, avg time to first touch, touches/referral avg, stale needs touch). Admin offers CSV export with configurable filters.</p>
+</div>
+</div>
+</div>
+
+<!-- Section 6 -->
+<div class="section" id="s6">
+<div class="section-label">Section 6</div>
+<h2>Personalization & Settings</h2>
+<div class="portal-grid">
+<div class="portal-card a">
+<h4>Portal A — Extensive Customization</h4>
+<p>Light/Dark mode, primary color (5 presets + custom), accent text, pill text colors with live preview, lead status colors (Fresh/Mid/Done), appointment defaults, persistent filter defaults, editable text templates, motivational login page with daily quote.</p>
+</div>
+<div class="portal-card b">
+<h4>Portal B — Minimal Customization</h4>
+<p>No theme or appearance customization. Clean, consistent design focused on functional configuration (relationships, ICLs, export settings) rather than aesthetics.</p>
+</div>
+</div>
+</div>
+
+<!-- Section 7 -->
+<div class="section" id="s7">
+<div class="section-label">Section 7</div>
+<h2>Administration</h2>
+<div class="portal-grid">
+<div class="portal-card a">
+<h4>Portal A — Limited</h4>
+<p>No visible admin panel. User management handled outside the app. Payroll page exists but was empty. Settings are per-user only.</p>
+</div>
+<div class="portal-card b">
+<h4>Portal B — Structured Admin Panel</h4>
+<p>Manager-only Admin page with three tabs: Relationships (setter-closer pairings), ICLs (organizations), and Export (CSV with filters for client, status, date, notes, and history). Role-restricted — closers cannot see Admin.</p>
+</div>
+</div>
+</div>
+
+<!-- Section 8 -->
+<div class="section" id="s8">
+<div class="section-label">Section 8</div>
+<h2>Side-by-Side Comparison Table</h2>
+<table>
+<thead><tr><th>Feature</th><th>Portal A</th><th>Portal B</th></tr></thead>
+<tbody>
+<tr><td><strong>Architecture</strong></td><td>Hybrid (Form + Sheet + CRM)</td><td>Unified role-based platform</td></tr>
+<tr><td><strong>Authentication</strong></td><td>PIN-based</td><td>Email/password + recovery</td></tr>
+<tr><td><strong>Referrer Submission</strong></td><td>Google Form (external)</td><td>In-app form (integrated)</td></tr>
+<tr><td><strong>Referrer Dashboard</strong></td><td>None</td><td>Full with SLA alerts</td></tr>
+<tr><td><strong>Referrer Visibility</strong></td><td>Zero</td><td>Pipeline + audit trail</td></tr>
+<tr><td><strong>Closer Dashboard</strong></td><td>Appointments, Fresh, Reloop, Priority</td><td>Suggested Next, Fresh, Mine, Unclaimed, Closed</td></tr>
+<tr><td><strong>Lead Claiming</strong></td><td>"Up For Grabs" button</td><td>Claim icon + Unclaim</td></tr>
+<tr><td><strong>Intelligent Prioritization</strong></td><td>Manual sorting</td><td>"Suggested Next" auto</td></tr>
+<tr><td><strong>Auto Cost Calculator</strong></td><td>✅</td><td>❌</td></tr>
+<tr><td><strong>Customer Timezone</strong></td><td>✅ Live local time</td><td>❌</td></tr>
+<tr><td><strong>Click-to-Call</strong></td><td>❌</td><td>✅</td></tr>
+<tr><td><strong>Call Dispositions</strong></td><td>Structured (Good/Bad + tags)</td><td>Free-text note</td></tr>
+<tr><td><strong>In-App Email</strong></td><td>❌</td><td>✅</td></tr>
+<tr><td><strong>In-App SMS</strong></td><td>❌</td><td>✅</td></tr>
+<tr><td><strong>Templates</strong></td><td>5 pre-built, text-only</td><td>Unlimited, Email + SMS</td></tr>
+<tr><td><strong>Template Readiness</strong></td><td>Ready out of the box</td><td>Requires setup</td></tr>
+<tr><td><strong>Analytics</strong></td><td>Dedicated page, 8+ sections</td><td>Embedded in dashboard</td></tr>
+<tr><td><strong>Leaderboard</strong></td><td>✅</td><td>❌</td></tr>
+<tr><td><strong>Rep Time Sheet</strong></td><td>✅</td><td>❌</td></tr>
+<tr><td><strong>Goal Setting</strong></td><td>✅ Weekly with projections</td><td>❌</td></tr>
+<tr><td><strong>Gamification</strong></td><td>✅</td><td>❌</td></tr>
+<tr><td><strong>Audit Trail</strong></td><td>❌</td><td>✅</td></tr>
+<tr><td><strong>SLA Monitoring</strong></td><td>❌</td><td>✅</td></tr>
+<tr><td><strong>Data Export</strong></td><td>❌ (Sheet is the data)</td><td>✅ CSV with filters</td></tr>
+<tr><td><strong>Admin Panel</strong></td><td>None</td><td>✅ (Relationships, ICLs, Export)</td></tr>
+<tr><td><strong>Role-Based Access</strong></td><td>Single role (closer)</td><td>Multi-role (Setter, Closer, Manager)</td></tr>
+<tr><td><strong>Theme Customization</strong></td><td>Extensive</td><td>None</td></tr>
+<tr><td><strong>Compliance Script</strong></td><td>Full 10-point read-aloud</td><td>Condensed 3-checkbox</td></tr>
+<tr><td><strong>Private Notes</strong></td><td>❌</td><td>✅</td></tr>
+<tr><td><strong>Address Geocoding</strong></td><td>❌</td><td>✅</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 9 -->
+<div class="section" id="s9">
+<div class="section-label">Section 9</div>
+<h2>Strengths & Weaknesses</h2>
+<h3>Portal A</h3>
+<div class="sw-grid">
+<div class="sw-card s">
+<h4 class="strength">✅ Strengths</h4>
+<ul>
+<li>Exceptional closer CRM with gamification</li>
+<li>Rich analytics with leaderboard & time sheet</li>
+<li>Pre-built templates ready immediately</li>
+<li>Auto-calculated monthly cost breakdown</li>
+<li>Customer timezone with live local time</li>
+<li>Extensive UI personalization</li>
+<li>Structured call dispositions</li>
+<li>Large reloop management (464+ leads)</li>
+</ul>
+</div>
+<div class="sw-card w">
+<h4 class="weakness">❌ Weaknesses</h4>
+<ul>
+<li>Zero referrer visibility post-submission</li>
+<li>No audit trail or accountability</li>
+<li>No in-app communication tools</li>
+<li>Google Sheet data dependency</li>
+<li>No admin panel or role-based access</li>
+<li>No SLA monitoring</li>
+<li>Quick Text buttons non-functional</li>
+<li>No data export from CRM</li>
+</ul>
+</div>
+</div>
+<h3>Portal B</h3>
+<div class="sw-grid">
+<div class="sw-card s">
+<h4 class="strength">✅ Strengths</h4>
+<ul>
+<li>Unified platform (single source of truth)</li>
+<li>Full referrer visibility + SLA alerts</li>
+<li>Complete audit trail with timestamps</li>
+<li>Multi-channel comms (Call, Email, SMS, Note)</li>
+<li>Click-to-call integration</li>
+<li>"Suggested Next" intelligent prioritization</li>
+<li>Role-based access control</li>
+<li>Admin panel with CSV export</li>
+</ul>
+</div>
+<div class="sw-card w">
+<h4 class="weakness">❌ Weaknesses</h4>
+<ul>
+<li>No auto cost calculator</li>
+<li>No customer timezone display</li>
+<li>No gamification or leaderboard</li>
+<li>No structured call dispositions</li>
+<li>Templates require setup (empty by default)</li>
+<li>No dedicated analytics page</li>
+<li>No goal setting or time sheet</li>
+<li>No theme customization</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Section 10 -->
+<div class="section" id="s10">
+<div class="section-label">Section 10</div>
+<h2>User Experience (UX) Scoring</h2>
+<p>Scored 1–5 per dimension. 1 = Poor, 3 = Average, 5 = Excellent.</p>
+<table>
+<thead><tr><th>UX Dimension</th><th>Portal A</th><th>Portal B</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Visual Design</td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td><span class="stars">★★★</span><span class="stars-dim">★★</span></td><td>A's dark mode, colors, branding create energy</td></tr>
+<tr><td>Referrer Onboarding</td><td><span class="stars">★★</span><span class="stars-dim">★★★</span></td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td>B integrates submission into the platform</td></tr>
+<tr><td>Referrer Ongoing</td><td><span class="stars">★</span><span class="stars-dim">★★★★</span></td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td>A has zero post-submission experience</td></tr>
+<tr><td>Closer Onboarding</td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td><span class="stars">★★★</span><span class="stars-dim">★★</span></td><td>A's PIN login is fast and intuitive</td></tr>
+<tr><td>Closer Daily Workflow</td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td>A has Reloop + KPI sidebar; B has Suggested Next</td></tr>
+<tr><td>Contact Efficiency</td><td><span class="stars">★★★</span><span class="stars-dim">★★</span></td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td>B offers click-to-call, in-app email/SMS</td></tr>
+<tr><td>Info Density</td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td><span class="stars">★★★</span><span class="stars-dim">★★</span></td><td>A packs cost calc, timezone, config in one view</td></tr>
+<tr><td>Motivation</td><td><span class="stars">★★★★★</span></td><td><span class="stars">★★</span><span class="stars-dim">★★★</span></td><td>A excels with leaderboards, quotes, goals</td></tr>
+<tr><td>Accountability</td><td><span class="stars">★★</span><span class="stars-dim">★★★</span></td><td><span class="stars">★★★★★</span></td><td>B has full audit trail + SLA tracking</td></tr>
+<tr><td>Scalability</td><td><span class="stars">★★</span><span class="stars-dim">★★★</span></td><td><span class="stars">★★★★</span><span class="stars-dim">★</span></td><td>A's Google Sheet will degrade at scale</td></tr>
+</tbody>
+</table>
+<div class="highlight-box">
+<p><strong>Overall: Portal A = 3.3 / 5 | Portal B = 3.9 / 5</strong> — Portal A wins on closer engagement; Portal B wins on platform cohesion and transparency.</p>
+</div>
+</div>
+
+<!-- Section 11 -->
+<div class="section" id="s11">
+<div class="section-label">Section 11</div>
+<h2>Technical Stack Comparison</h2>
+<table>
+<thead><tr><th>Dimension</th><th>Portal A</th><th>Portal B</th></tr></thead>
+<tbody>
+<tr><td>Frontend</td><td>Vanilla HTML/CSS/JS</td><td>Modern framework (React/Next.js likely)</td></tr>
+<tr><td>Hosting</td><td>Render (free/hobby tier)</td><td>Vercel (optimized for frameworks)</td></tr>
+<tr><td>Data Layer</td><td>Google Sheets (no database)</td><td>Application database (API-driven)</td></tr>
+<tr><td>Authentication</td><td>Client-side PIN (minimal security)</td><td>Server-side email/password + sessions</td></tr>
+<tr><td>Email/SMS Integration</td><td>None</td><td>Server-side (likely SendGrid/Twilio)</td></tr>
+<tr><td>Multi-Tenancy</td><td>Single-tenant</td><td>Multi-tenant (ICLs, programs)</td></tr>
+<tr><td>Scalability</td><td>Limited (~100K row Sheet limit)</td><td>Strong (database-backed)</td></tr>
+<tr><td>Security</td><td>Low (PIN, public form)</td><td>Moderate (auth, RBAC, recovery)</td></tr>
+<tr><td>Maintainability</td><td>Moderate (vanilla JS, fragile Sheet)</td><td>High (component architecture, APIs)</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 12 -->
+<div class="section" id="s12">
+<div class="section-label">Section 12</div>
+<h2>Implementation Effort Estimates</h2>
+<p>Assumes a 2–3 developer team. Effort in person-weeks.</p>
+
+<h3>Option A: Build on Portal B + Add Portal A Features</h3>
+<table>
+<thead><tr><th>Feature to Add</th><th>Effort</th><th>Complexity</th></tr></thead>
+<tbody>
+<tr><td>Auto cost calculator</td><td>1 week</td><td>Low</td></tr>
+<tr><td>Customer timezone detection + display</td><td>1 week</td><td>Low</td></tr>
+<tr><td>Structured call dispositions + quick tags</td><td>1–2 weeks</td><td>Low-Med</td></tr>
+<tr><td>KPI sidebar counters</td><td>1 week</td><td>Low</td></tr>
+<tr><td>Rep leaderboard</td><td>2 weeks</td><td>Medium</td></tr>
+<tr><td>Motivational theme + daily quotes</td><td>0.5 weeks</td><td>Low</td></tr>
+<tr><td>Rep time sheet</td><td>2 weeks</td><td>Medium</td></tr>
+<tr><td>Goal setting with projections</td><td>1–2 weeks</td><td>Low-Med</td></tr>
+<tr><td>Dedicated analytics page</td><td>3–4 weeks</td><td>High</td></tr>
+<tr><td>Theme customization (dark mode, colors)</td><td>2 weeks</td><td>Medium</td></tr>
+<tr><td>Detailed compliance script</td><td>0.5 weeks</td><td>Low</td></tr>
+<tr><td>Reloop management section</td><td>2 weeks</td><td>Medium</td></tr>
+<tr><td>Pre-built template library</td><td>1 week</td><td>Low</td></tr>
+<tr style="background:#f0f4ff"><td><strong>Total</strong></td><td><strong>~18–22 weeks</strong></td><td><strong>~4.5–5.5 months</strong></td></tr>
+</tbody>
+</table>
+
+<h3>Option B: Build on Portal A + Add Portal B Features</h3>
+<table>
+<thead><tr><th>Feature to Add</th><th>Effort</th><th>Complexity</th></tr></thead>
+<tbody>
+<tr><td>Replace Google Form with in-app submission</td><td>3–4 weeks</td><td>High</td></tr>
+<tr><td>Referrer dashboard with SLA alerts</td><td>3–4 weeks</td><td>High</td></tr>
+<tr><td>Email/password authentication</td><td>2–3 weeks</td><td>High</td></tr>
+<tr><td>Role-based access control</td><td>2–3 weeks</td><td>High</td></tr>
+<tr><td>Full audit trail</td><td>2–3 weeks</td><td>High</td></tr>
+<tr><td>Multi-channel communication</td><td>4–5 weeks</td><td>High</td></tr>
+<tr><td>Click-to-call</td><td>1 week</td><td>Low</td></tr>
+<tr><td>Admin panel</td><td>3–4 weeks</td><td>High</td></tr>
+<tr><td>"Suggested Next" prioritization</td><td>2 weeks</td><td>Medium</td></tr>
+<tr><td>Multi-tenant support</td><td>3–4 weeks</td><td>High</td></tr>
+<tr><td>Template system (multi-channel)</td><td>2–3 weeks</td><td>Medium</td></tr>
+<tr><td>Migrate from Sheets to database</td><td>4–5 weeks</td><td>High</td></tr>
+<tr style="background:#fef2f2"><td><strong>Total</strong></td><td><strong>~32–40 weeks</strong></td><td><strong>~8–10 months</strong></td></tr>
+</tbody>
+</table>
+
+<div class="highlight-box" style="margin-top:24px">
+<p><strong>Verdict:</strong> Building on Portal B (~5 months, lower risk) is nearly half the effort of building on Portal A (~9 months, higher risk). The core infrastructure — auth, database, roles, audit trail, communication — is the hardest to retrofit.</p>
+</div>
+</div>
+
+<!-- Section 13 -->
+<div class="section" id="s13">
+<div class="section-label">Section 13</div>
+<h2>Recommended Unified Feature List</h2>
+
+<div class="tier-badge tier-1">TIER 1 — MUST HAVE (LAUNCH BLOCKERS)</div>
+<table>
+<thead><tr><th>#</th><th>Feature</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Unified role-based platform (Setter, Closer, Manager)</td><td>Portal B</td></tr>
+<tr><td>2</td><td>In-app referral form with detailed product config + inline pricing</td><td>Both</td></tr>
+<tr><td>3</td><td>Referrer dashboard with SLA alerts</td><td>Portal B</td></tr>
+<tr><td>4</td><td>Full referrer pipeline visibility</td><td>Portal B</td></tr>
+<tr><td>5</td><td>Closer CRM dashboard (Appointments, Fresh, Reloop)</td><td>Portal A</td></tr>
+<tr><td>6</td><td>Lead detail with auto cost calculator</td><td>Portal A</td></tr>
+<tr><td>7</td><td>Customer timezone display</td><td>Portal A</td></tr>
+<tr><td>8</td><td>Multi-channel touch base (Call, Email, SMS, Note) + structured dispositions</td><td>Both</td></tr>
+<tr><td>9</td><td>Click-to-call</td><td>Portal B</td></tr>
+<tr><td>10</td><td>Full audit trail</td><td>Portal B</td></tr>
+<tr><td>11</td><td>Pre-built templates + multi-channel merge field system</td><td>Both</td></tr>
+<tr><td>12</td><td>Full compliance enforcement (10-point read-aloud)</td><td>Portal A</td></tr>
+<tr><td>13</td><td>Proper authentication (email/password + recovery)</td><td>Portal B</td></tr>
+</tbody>
+</table>
+
+<div class="tier-badge tier-2" style="margin-top:24px">TIER 2 — SHOULD HAVE (FIRST 90 DAYS)</div>
+<table>
+<thead><tr><th>#</th><th>Feature</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>14</td><td>Dedicated analytics page</td><td>Portal A</td></tr>
+<tr><td>15</td><td>Rep leaderboard</td><td>Portal A</td></tr>
+<tr><td>16</td><td>KPI sidebar counters</td><td>Portal A</td></tr>
+<tr><td>17</td><td>"Suggested Next" intelligent prioritization</td><td>Portal B</td></tr>
+<tr><td>18</td><td>Goal setting with projections</td><td>Portal A</td></tr>
+<tr><td>19</td><td>In-app email sending with composer</td><td>Portal B</td></tr>
+<tr><td>20</td><td>In-app SMS sending with composer</td><td>Portal B</td></tr>
+<tr><td>21</td><td>Admin panel (Relationships, ICLs, CSV Export)</td><td>Portal B</td></tr>
+<tr><td>22</td><td>Private notes</td><td>Portal B</td></tr>
+<tr><td>23</td><td>Address geocoding/autocomplete</td><td>Portal B</td></tr>
+</tbody>
+</table>
+
+<div class="tier-badge tier-3" style="margin-top:24px">TIER 3 — NICE TO HAVE (ONGOING)</div>
+<table>
+<thead><tr><th>#</th><th>Feature</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>24</td><td>Theme customization (dark mode, colors)</td><td>Portal A</td></tr>
+<tr><td>25</td><td>Rep time sheet</td><td>Portal A</td></tr>
+<tr><td>26</td><td>Motivational elements (quotes, branding)</td><td>Portal A</td></tr>
+<tr><td>27</td><td>Payroll / commission integration</td><td>Portal A</td></tr>
+<tr><td>28</td><td>Multi-channel template library (shared)</td><td>Portal B</td></tr>
+<tr><td>29</td><td>Advanced filters panel</td><td>Portal B</td></tr>
+<tr><td>30</td><td>Mobile-optimized responsive design</td><td>New</td></tr>
+<tr><td>31</td><td>Push notifications / alerts</td><td>New</td></tr>
+<tr><td>32</td><td>Unified customer communication timeline</td><td>New</td></tr>
+<tr><td>33</td><td>Duplicate lead detection</td><td>New</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Section 14 -->
+<div class="rec-box" id="s14">
+<div class="section-label" style="color:rgba(255,255,255,.5)">Section 14</div>
+<h2>Final Recommendation</h2>
+<p><strong>Build on Portal B's foundation and layer in Portal A's closer-experience features.</strong></p>
+<p>Portal B provides the architectural backbone that is hardest to build from scratch: proper authentication, a unified database, role-based access, audit trails, SLA monitoring, and multi-channel communication. These are infrastructure-level features that would take 6+ months to retrofit into Portal A.</p>
+<p>Portal A's strengths — gamification, analytics, cost calculator, timezone display, structured dispositions, and motivational UX — are primarily frontend features and business logic that can be layered on top of Portal B's foundation in approximately 4–5 months.</p>
+<p>The unified platform should carry Portal A's energy and sales-floor culture combined with Portal B's operational rigor and cross-team transparency.</p>
+</div>
+
+<div style="background:#1a1a2e;color:#fff;border-radius:12px;padding:32px 40px;text-align:center">
+<p style="color:rgba(255,255,255,.92);font-size:17px;margin:0;line-height:1.8">The goal: a platform with <strong style="color:#7eb8ff">Portal B's operational rigor</strong> and <strong style="color:#f5c16c">Portal A's sales-floor energy</strong> —<br>a tool that managers trust and closers love.</p>
+</div>
+
+</div>
+</body>
+</html>
